@@ -1,21 +1,21 @@
+
 function inspect(object) {
   switch(typeof object) {
     case 'number': return node(object.toString())
     case 'string': return node('"' + object + '"')
     case 'boolean': return node(object.toString())
     case 'undefined': return node('undefined')
-    case 'null': return node('null')
     case 'object': return Array.isArray(object) ?
-      node('Array [' + object.length + ']') :
+      tree('Array [' + object.length + ']', object.map(inspect)) :
       object != null ?
-        node('Object', []) :
+        tree('Object', []) :
         node('null')
   }
-  function node(text, children) {
-    return {
-      text: text,
-      children: children
-    }
+  function node(text) {
+    return { text: text }
+  }
+  function tree(text, children) {
+    return { text: text, children: children }
   }
 }
 
