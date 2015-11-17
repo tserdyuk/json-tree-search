@@ -34,9 +34,9 @@ var utils = function() {
 
   function match(query, value) {
     if (value === null) {
-      value = 'null'
+      value = '' //'null'
     } else if (value === undefined) {
-      value = 'undefined'
+      value = '' //'undefined'
     }
     return value.toString().toLowerCase()
       .indexOf(query.toLowerCase()) != -1

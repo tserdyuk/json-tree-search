@@ -10,8 +10,8 @@ describe('match', () => {
   test('contains number', '4', 43, true)
   test('not contains number', '5', 43, false)
   test('boolean', 'al', false, true)
-  test('null', 'null', null, true)
-  test('undefined', 'DEF', undefined, true)
+  test('null', 'null', null, false)
+  test('undefined', 'DEF', undefined, false)
   test('not null', 'not', null, false)
 })
 
