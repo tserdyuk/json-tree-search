@@ -3,7 +3,8 @@ function inspect(object) {
     case 'number': return object.toString()
     case 'string': return '"' + object + '"'
     case 'boolean': return object.toString()
-    case 'array': return 'Array [' + object.length + ']'
+    case 'object': return Array.isArray(object) ?
+      'Array [' + object.length + ']' : 'Object'
   }
 }
 
