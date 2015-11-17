@@ -46,6 +46,7 @@ function identify(object) {
   }
 }
 
+// Emulating CommonJS for tests
 if (module) {
   module.exports = {
     inspect: inspect,
@@ -53,3 +54,4 @@ if (module) {
     identify: identify
   }
 }
+var module
