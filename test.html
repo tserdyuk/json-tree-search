@@ -11,20 +11,14 @@
     <script src="src/directive.js"></script>
     <script src="data.js"></script>
     <script>
-      angular.module('test', [])
+      angular.module('test', ['jts'])
         .controller('Main', function($scope) {
           $scope.object = data
-          $scope.search = function() {
-            highlight('#tree', $scope.query)
-          }
-          tree(document.getElementById('tree'), data)
         })
     </script>
   </head>
   <body ng-controller="Main">
     <input ng-model="query">
-    <button ng-click="search()">Search</button>
-    <div json=”object” search=”search”></div>
-    <div id="tree"></div>
+    <div json="{{object}}" search="{query}"”></div>
   </body>
 </html>

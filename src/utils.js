@@ -63,6 +63,7 @@ var utils = function() {
         object.children.forEach(_identify)
     }
   }
+
   return {
     inspect: inspect,
     match: match,
