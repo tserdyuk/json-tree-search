@@ -21,6 +21,7 @@
             },
             bool: true
           }
+          var node = { id: 'unique_id', text: '2: 3' }
           var tree = {
             text: 'Object',
             children: [{
@@ -28,7 +29,7 @@
               children: [
                 { text: '0: 1' },
                 { text: '1: 2' },
-                { text: '2: 3' }
+                node
               ]
             }, {
               text: 'obj: Object',
@@ -46,7 +47,9 @@
               data: [tree]
             }
           })
-          console.log(tree.children[0].id)
+          setTimeout(function() {
+            $('#tree').jstree('select_node', node)
+          }, 1000)
         })
     </script>
   </head>
