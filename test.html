@@ -9,18 +9,11 @@
     <script src="lib/angular-1.4.7.min.js"></script>
     <script src="src/utils.js"></script>
     <script src="src/directive.js"></script>
+    <script src="data.js"></script>
     <script>
       angular.module('test', [])
         .controller('Main', function($scope) {
-          $scope.object = {
-            array: [1, 2, 3],
-            obj: {
-              x: 1,
-              y: 2,
-              str: 'string'
-            },
-            bool: true
-          }
+          $scope.object = data
           var node1 = { id: 1, text: '2: 3' }
           var node2 = { id: 2, text: 'str: "string"' }
           var tree = {
