@@ -21,7 +21,8 @@
             },
             bool: true
           }
-          var node = { id: 'unique_id', text: '2: 3' }
+          var node1 = { id: 'id1', text: '2: 3' }
+          var node2 = { id: 'id2', text: 'str: "string"' }
           var tree = {
             text: 'Object',
             children: [{
@@ -29,14 +30,14 @@
               children: [
                 { text: '0: 1' },
                 { text: '1: 2' },
-                node
+                node1
               ]
             }, {
               text: 'obj: Object',
               children: [
                 { text: 'x: 1' },
                 { text: 'y: 2' },
-                { text: 'str: "string"' }
+                node2
               ]
             }, {
               text: 'bool: true'
@@ -48,7 +49,7 @@
             }
           })
           setTimeout(function() {
-            $('#tree').jstree('select_node', node)
+            $('#tree').jstree('select_node', [node1, node2])
           }, 1000)
         })
     </script>
