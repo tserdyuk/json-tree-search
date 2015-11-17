@@ -24,7 +24,7 @@ function inspect(object) {
     return result
   }
   function node(text) {
-    return { text: text }
+    return { text: text, value: object }
   }
   function tree(text, children) {
     return { text: text, children: children }
