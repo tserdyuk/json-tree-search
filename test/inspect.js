@@ -8,7 +8,7 @@ describe('inspect', () => {
   test('null', null, 'null')
   test('undefined', undefined, 'undefined')
   test('array', [1, 2, 3], 'Array [3]', [
-    { text: '1' }, { text: '2' }, { text: '3' }
+    { text: '0: 1' }, { text: '1: 2' }, { text: '2: 3' }
   ])
   test('empty object', {}, 'Object', [])
   test('complex object', {
