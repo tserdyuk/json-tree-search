@@ -41,11 +41,13 @@ function match(query, value) {
     .indexOf(query.toLowerCase()) != -1
 }
 
-function search(query, children) {
-  return children ?
-    [].concat(children.map(function(node) {
-      return match(query, node)
-    })) : []
+function search(query, node) {
+  if (node.value) {
+    return match(query, node.value) ? [node.id] : []
+  }
+  return [].concat(node.children.map(function(node) {
+    return search(query, node)
+  }))
 }
 
 function identify(object) {
@@ -64,7 +66,8 @@ if (module) {
   module.exports = {
     inspect: inspect,
     match: match,
-    identify: identify
+    identify: identify,
+    search: search
   }
 }
 var module
