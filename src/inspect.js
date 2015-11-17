@@ -5,11 +5,11 @@ function inspect(object) {
     case 'boolean': return node(object.toString())
     case 'undefined': return node('undefined')
     case 'null': return node('null')
-    case 'object': return node(
-      Array.isArray(object) ?
-      'Array [' + object.length + ']' :
-      object == null ? 'null' : 'Object'
-    )
+    case 'object': return Array.isArray(object) ?
+      node('Array [' + object.length + ']') :
+      object != null ?
+        node('Object', []) :
+        node('null')
   }
   function node(text, children) {
     return {
