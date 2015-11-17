@@ -2,7 +2,7 @@
 var tree_data = null
 
 function tree(element, data) {
-  tree_data = identify(inspect(data))
+  tree_data = utils.identify(utils.inspect(data))
   $(element).jstree({
     core: {
       data: [tree_data]
@@ -11,5 +11,6 @@ function tree(element, data) {
 }
 
 function highlight(element, query) {
-  $(element).jstree('select_node', [20, 50])
+  var ids = utils.search(query, tree_data)
+  $(element).jstree('select_node', ids)
 }
