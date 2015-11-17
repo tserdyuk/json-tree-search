@@ -45,9 +45,11 @@ function search(query, node) {
   if (node.value) {
     return match(query, node.value) ? [node.id] : []
   }
-  return [].concat(node.children.map(function(node) {
-    return search(query, node)
-  }))
+  return Array.prototype.concat.apply([],
+    node.children.map(function(node) {
+      return search(query, node)
+    })
+  )
 }
 
 function identify(object) {
