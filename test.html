@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="test">
+  <head>
+    <meta charset="utf-8">
+    <title>JSON Tree Search</title>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/jstree-3.2.1.min.js"></script>
+    <script src="lib/angular-1.4.7.min.js"></script>
+    <script src="src/search.js"></script>
+    <script src="src/directive.js"></script>
+    <script>
+      angular.module('test', [])
+        .controller('Main', function($scope) {
+          $scope.object = {}
+        })
+    </script>
+  </head>
+  <body ng-controller="Main">
+    <div json=”object” search=”search”></div>
+  </body>
+</html>
