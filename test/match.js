@@ -11,7 +11,8 @@ describe('match', () => {
   test('not contains number', '5', 43, false)
   test('boolean', 'al', false, true)
   test('null', 'null', null, true)
-  test('undefined', 'DEF', true)
+  test('undefined', 'DEF', undefined, true)
+  test('not null', 'not', null, false)
 })
 
 function test(name, query, value, result) {
