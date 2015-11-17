@@ -31,9 +31,9 @@ function inspect(object) {
   }
 }
 
-function match(string, value) {
+function match(query, value) {
   return value.toString().toLowerCase()
-    .indexOf(string.toLowerCase()) != -1
+    .indexOf(query.toLowerCase()) != -1
 }
 
 function identify(object) {

@@ -11,8 +11,8 @@ describe('match', () => {
   test('not contains number', '5', 43, false)
 })
 
-function test(name, string, value, result) {
+function test(name, query, value, result) {
   it(name, () =>
-    assert.equal(utils.match(string, value), result)
+    assert.equal(utils.match(query, value), result)
   )
 }

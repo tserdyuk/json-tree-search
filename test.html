@@ -14,11 +14,16 @@
       angular.module('test', [])
         .controller('Main', function($scope) {
           $scope.object = data
+          $scope.search = function() {
+            alert($scope.query)
+          }
           tree(document.getElementById('tree'), data)
         })
     </script>
   </head>
   <body ng-controller="Main">
+    <input ng-model="query">
+    <button ng-click="search()">Search</button>
     <div json=”object” search=”search”></div>
     <div id="tree"></div>
   </body>
