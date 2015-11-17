@@ -3,7 +3,7 @@ var utils = require('../src/utils')
 
 describe('identify', () => {
   it ('works', () => {
-    const object = {
+    assert.deepEqual(utils.identify({
       children: [
         {},
         { children: [] },
@@ -11,9 +11,7 @@ describe('identify', () => {
           {}, {}
         ]}
       ]
-    }
-    utils.identify(object)
-    assert.deepEqual(object, {
+    }), {
       id: 1,
       children: [
         { id: 2 },

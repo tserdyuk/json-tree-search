@@ -39,6 +39,7 @@ function match(string, value) {
 function identify(object) {
   var index = 1
   _identify(object)
+  return object
   function _identify(object) {
     object.id = index++
     if (object.children)

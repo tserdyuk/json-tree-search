@@ -1,6 +1,6 @@
 
 function tree(element, data) {
-  var tree = inspect(data)
+  var tree = identify(inspect(data))
   $(element).jstree({
     core: {
       data: [tree]
