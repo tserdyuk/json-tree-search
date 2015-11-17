@@ -12,8 +12,10 @@ describe('inspect', () => {
 })
 
 
-function test(name, object, result) {
+function test(name, object, text, children) {
   it(name, () =>
-    assert.deepEqual(inspect(object), result)
+    assert.deepEqual(inspect(object), {
+      text, children
+    })
   )
 }
