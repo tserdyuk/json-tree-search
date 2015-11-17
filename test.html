@@ -14,36 +14,7 @@
       angular.module('test', [])
         .controller('Main', function($scope) {
           $scope.object = data
-          var node1 = { id: 1, text: '2: 3' }
-          var node2 = { id: 2, text: 'str: "string"' }
-          var tree = {
-            text: 'Object',
-            children: [{
-              text: 'array: Array [3]',
-              children: [
-                { text: '0: 1' },
-                { text: '1: 2' },
-                node1
-              ]
-            }, {
-              text: 'obj: Object',
-              children: [
-                { text: 'x: 1' },
-                { text: 'y: 2' },
-                node2
-              ]
-            }, {
-              text: 'bool: true'
-            }]
-          }
-          $('#tree').jstree({
-            core: {
-              data: [tree]
-            }
-          })
-          setTimeout(function() {
-            $('#tree').jstree('select_node', [node1, node2])
-          }, 1000)
+          tree(document.getElementById('tree'), data)
         })
     </script>
   </head>
