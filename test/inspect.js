@@ -6,6 +6,9 @@ describe('inspect', () => {
   test('string', 'string', '"string"')
   test('boolean', false, 'false')
   test('array', [1, 2, 3], 'Array [3]')
+  test('null', null, 'null')
+  test('undefined', undefined, 'undefined')
+  test('object', {}, 'Object')
 })
 
 

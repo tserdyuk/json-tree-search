@@ -3,8 +3,11 @@ function inspect(object) {
     case 'number': return object.toString()
     case 'string': return '"' + object + '"'
     case 'boolean': return object.toString()
+    case 'undefined': return 'undefined'
+    case 'null': return 'null'
     case 'object': return Array.isArray(object) ?
-      'Array [' + object.length + ']' : 'Object'
+      'Array [' + object.length + ']' :
+      object == null ? 'null' : 'Object'
   }
 }
 
