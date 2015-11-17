@@ -36,9 +36,20 @@ function match(string, value) {
     .indexOf(string.toLowerCase()) != -1
 }
 
+function identify(object) {
+  var index = 1
+  _identify(object)
+  function _identify(object) {
+    object.id = index++
+    if (object.children)
+      object.children.forEach(_identify)
+  }
+}
+
 if (module) {
   module.exports = {
     inspect: inspect,
-    match: match
+    match: match,
+    identify: identify
   }
 }
