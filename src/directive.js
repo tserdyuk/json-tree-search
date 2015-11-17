@@ -4,18 +4,22 @@ angular.module('jts', [])
     return {
       restrict: 'A',
       link: function(scope, element, attr) {
+        var tree = $(element)
         var data = null
         scope.$watch(attr.json, function(value) {
           data = utils.identify(utils.inspect(value))
-          $(element).jstree({
+          tree.jstree({
             core: {
               data: [data]
             }
           })
         })
         attr.$observe('search', function(value) {
-          var ids = utils.search(value, data)
-          $(element).jstree('select_node', ids)
+          if (data) {
+            tree.jstree('deselect_all')
+            var ids = utils.search(value, data)
+            tree.jstree('select_node', ids)
+          }
         })
       }
     }
