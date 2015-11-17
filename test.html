@@ -15,7 +15,7 @@
         .controller('Main', function($scope) {
           $scope.object = data
           $scope.search = function() {
-            alert($scope.query)
+            highlight('#tree', $scope.query)
           }
           tree(document.getElementById('tree'), data)
         })

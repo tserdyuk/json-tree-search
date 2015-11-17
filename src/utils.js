@@ -36,6 +36,13 @@ function match(query, value) {
     .indexOf(query.toLowerCase()) != -1
 }
 
+function matches(query, children) {
+  return children ?
+    [].concat(children.map(function(node) {
+      return match(query, node)
+    })) : []
+}
+
 function identify(object) {
   var index = 1
   _identify(object)
