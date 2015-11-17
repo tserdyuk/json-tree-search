@@ -15,17 +15,11 @@
         .controller('Main', function($scope) {
           $scope.query = ''
           $scope.object = data
-          setTimeout(function() {
-            $scope.object = {
-              x: 1,
-              y: 2
-            }
-          }, 2000)
         })
     </script>
   </head>
   <body ng-controller="Main">
     <input ng-model="query">
-    <div json="{{object}}" search="{{query}}"”></div>
+    <div json="object" search="{{query}}"”></div>
   </body>
 </html>
