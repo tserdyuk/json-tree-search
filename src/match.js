@@ -1,6 +1,7 @@
 
 function match(string, value) {
-  return false
+  return value.toString().toLowerCase()
+    .indexOf(string.toLowerCase()) != -1
 }
 
 if (module)
