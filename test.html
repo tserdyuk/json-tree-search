@@ -13,12 +13,16 @@
     <script>
       angular.module('test', ['jts'])
         .controller('Main', function($scope) {
+          /*$scope.object = {
+            x: 1,
+            y: 2
+          }*/
           $scope.object = data
         })
     </script>
   </head>
   <body ng-controller="Main">
     <input ng-model="query">
-    <div json="{{object}}" search="{query}"”></div>
+    <div json="{{object}}" search="{{query}}"”></div>
   </body>
 </html>

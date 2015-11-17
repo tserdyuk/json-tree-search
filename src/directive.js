@@ -13,6 +13,10 @@ angular.module('jts', [])
             }
           })
         })
+        attr.$observe('search', function(value) {
+          var ids = utils.search(value, data)
+          $(element).jstree('select_node', ids)
+        })
       }
     }
   })
