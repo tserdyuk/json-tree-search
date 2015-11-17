@@ -8,6 +8,7 @@ angular.module('jts', [])
         var data = null
         scope.$watch(attr.json, function(value) {
           data = utils.identify(utils.inspect(value))
+          tree.jstree('destroy')
           tree.jstree({
             core: {
               data: [data]
