@@ -11,5 +11,5 @@ function tree(element, data) {
 }
 
 function highlight(element, query) {
-  $(element).jstree('select_nodes', matches(query, tree_data.children))
+  $(element).jstree('select_node', [20, 50])
 }

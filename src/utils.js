@@ -36,7 +36,7 @@ function match(query, value) {
     .indexOf(query.toLowerCase()) != -1
 }
 
-function matches(query, children) {
+function search(query, children) {
   return children ?
     [].concat(children.map(function(node) {
       return match(query, node)

@@ -12,7 +12,7 @@ describe('match', () => {
 })
 
 function test(name, query, value, result) {
-  it(name, () =>
-    assert.equal(utils.match(query, value), result)
-  )
+  it(name, () => assert.equal(
+    utils.match(query, value), result
+  ))
 }
