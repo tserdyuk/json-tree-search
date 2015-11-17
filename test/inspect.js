@@ -10,7 +10,22 @@ describe('inspect', () => {
   test('array', [1, 2, 3], 'Array [3]', [
     { text: '1' }, { text: '2' }, { text: '3' }
   ])
-  test('object', {}, 'Object', [])
+  test('empty object', {}, 'Object', [])
+  test('complex object', {
+    x: 1,
+    arr: [1, 2],
+    str: 'str',
+    obj: { val: null }
+  }, 'Object', [
+    { text: 'x: 1' },
+    { text: 'arr: Array[2]', children: [
+      { text: '1' }, { text: '2' }
+    ] },
+    { text: 'str: "str"' },
+    { text: 'obj: Object', children: [
+      { text: 'val: null' }
+    ]}
+  ])
 })
 
 function test(name, object, text, children) {
