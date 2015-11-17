@@ -13,11 +13,14 @@
     <script>
       angular.module('test', ['jts'])
         .controller('Main', function($scope) {
-          /*$scope.object = {
-            x: 1,
-            y: 2
-          }*/
+          $scope.query = ''
           $scope.object = data
+          setTimeout(function() {
+            $scope.object = {
+              x: 1,
+              y: 2
+            }
+          }, 2000)
         })
     </script>
   </head>

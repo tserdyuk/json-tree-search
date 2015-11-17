@@ -2,7 +2,8 @@ var assert = require('assert')
 var utils = require('../src/utils')
 
 describe('search', () => {
-  test('null', null, 'a', [])
+  test('empty', '', 'a', [])
+  test('null', 'null', 'a', [])
   test('number', '10', 100, [1])
   test('not number', 'a', 100, [])
   test('string', 'str', 'string', [1])

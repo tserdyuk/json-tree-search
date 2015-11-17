@@ -17,6 +17,7 @@ angular.module('jts', [])
         attr.$observe('search', function(value) {
           if (data) {
             tree.jstree('deselect_all')
+            tree.jstree('close_all')
             var ids = utils.search(value, data)
             tree.jstree('select_node', ids)
           }

@@ -43,7 +43,7 @@ var utils = function() {
   }
 
   function search(query, node) {
-    if (query == null) return []
+    if (query == null || query == '') return []
     if (!node.children) {
       return match(query, node.value) ? [node.id] : []
     }
