@@ -42,7 +42,7 @@ function match(query, value) {
 }
 
 function search(query, node) {
-  if (node.value) {
+  if (!node.children) {
     return match(query, node.value) ? [node.id] : []
   }
   return Array.prototype.concat.apply([],
