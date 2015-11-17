@@ -2,16 +2,16 @@ var assert = require('assert')
 var utils = require('../src/utils')
 
 describe('inspect', () => {
-  test('number', 1, '1')
-  test('string', 'string', '"string"')
-  test('boolean', false, 'false')
-  test('null', null, 'null')
-  test('undefined', undefined, 'undefined')
-  test('array', [1, 2], 'Array [2]', [
+  node('number', 1, '1')
+  node('string', 'string', '"string"')
+  node('boolean', false, 'false')
+  node('null', null, 'null')
+  node('undefined', undefined, 'undefined')
+  tree('array', [1, 2], 'Array [2]', [
     { text: '0: 1' }, { text: '1: 2' }
   ])
-  test('empty object', {}, 'Object', [])
-  test('complex object', {
+  tree('empty object', {}, 'Object', [])
+  tree('complex object', {
     x: 1,
     arr: [1, 2],
     str: 'str',
@@ -28,10 +28,14 @@ describe('inspect', () => {
   ])
 })
 
-function test(name, object, text, children) {
-  const result = children ?
-    { text, children } : { text }
-  it(name, () =>
-    assert.deepEqual(utils.inspect(object), result)
-  )
+function node(name, object, text) {
+  test(name, object, { text })
+}
+function tree(name, object, text, children) {
+  test(name, object, { text, children })
+}
+function test(name, object, result) {
+  it(name, () => assert.deepEqual(
+      utils.inspect(object), result
+  ))
 }
