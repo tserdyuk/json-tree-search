@@ -1,5 +1,5 @@
 var assert = require('assert')
-var inspect = require('../src/inspect')
+var utils = require('../src/utils')
 
 describe('inspect', () => {
   test('number', 1, '1')
@@ -32,6 +32,6 @@ function test(name, object, text, children) {
   const result = children ?
     { text, children } : { text }
   it(name, () =>
-    assert.deepEqual(inspect(object), result)
+    assert.deepEqual(utils.inspect(object), result)
   )
 }

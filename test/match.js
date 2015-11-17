@@ -1,5 +1,5 @@
 var assert = require('assert')
-var match = require('../src/match')
+var utils = require('../src/utils')
 
 describe('match', () => {
   test('contains', 'b', 'abc', true)
@@ -13,6 +13,6 @@ describe('match', () => {
 
 function test(name, string, value, result) {
   it(name, () =>
-    assert.equal(match(string, value), result)
+    assert.equal(utils.match(string, value), result)
   )
 }

@@ -31,5 +31,14 @@ function inspect(object) {
   }
 }
 
-if (module)
-  module.exports = inspect
+function match(string, value) {
+  return value.toString().toLowerCase()
+    .indexOf(string.toLowerCase()) != -1
+}
+
+if (module) {
+  module.exports = {
+    inspect: inspect,
+    match: match
+  }
+}
