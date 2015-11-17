@@ -32,6 +32,11 @@ function inspect(object) {
 }
 
 function match(query, value) {
+  if (value === null) {
+    value = 'null'
+  } else if (value === undefined) {
+    value = 'undefined'
+  }
   return value.toString().toLowerCase()
     .indexOf(query.toLowerCase()) != -1
 }

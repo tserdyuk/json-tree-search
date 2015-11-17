@@ -9,6 +9,9 @@ describe('match', () => {
   test('mixed case', 'aB', 'aB', true)
   test('contains number', '4', 43, true)
   test('not contains number', '5', 43, false)
+  test('boolean', 'al', false, true)
+  test('null', 'null', null, true)
+  test('undefined', 'DEF', true)
 })
 
 function test(name, query, value, result) {
