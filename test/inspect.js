@@ -7,8 +7,8 @@ describe('inspect', () => {
   test('boolean', false, 'false')
   test('null', null, 'null')
   test('undefined', undefined, 'undefined')
-  test('array', [1, 2, 3], 'Array [3]', [
-    { text: '0: 1' }, { text: '1: 2' }, { text: '2: 3' }
+  test('array', [1, 2], 'Array [2]', [
+    { text: '0: 1' }, { text: '1: 2' }
   ])
   test('empty object', {}, 'Object', [])
   test('complex object', {
@@ -18,8 +18,8 @@ describe('inspect', () => {
     obj: { val: null }
   }, 'Object', [
     { text: 'x: 1' },
-    { text: 'arr: Array[2]', children: [
-      { text: '1' }, { text: '2' }
+    { text: 'arr: Array [2]', children: [
+      { text: '0: 1' }, { text: '1: 2' }
     ] },
     { text: 'str: "str"' },
     { text: 'obj: Object', children: [

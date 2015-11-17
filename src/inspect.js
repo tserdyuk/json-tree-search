@@ -6,14 +6,21 @@ function inspect(object) {
     case 'boolean': return node(object.toString())
     case 'undefined': return node('undefined')
     case 'object': return Array.isArray(object) ?
-      tree('Array [' + object.length + ']', object.map(item)) :
+      tree('Array [' + object.length + ']', object.map(field)) :
       object != null ?
-        tree('Object', []) :
+        tree('Object', fields(object)) :
         node('null')
   }
-  function item(object, index) {
+  function fields(object) {
+    var result = []
+    for (var prop in object) {
+      result.push(field(object[prop], prop))
+    }
+    return result
+  }
+  function field(object, name) {
     var result = inspect(object)
-    result.text = index + ': ' + result.text
+    result.text = name + ': ' + result.text
     return result
   }
   function node(text) {
